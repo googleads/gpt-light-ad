@@ -1,0 +1,76 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="glade-ad">
+    <template>
+        <style>
+         :host {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        </style>
+        <div id="ad_slot_placeholder"></div>
+    </template>
+    <script>
+        (function() {
+            // Check if Glade has already loaded
+            var gladeReady = !!(window.glade && window.glade.run); 
+            var elementsWaitingForGlade = [];
+            if (!gladeReady) {
+              window.addEventListener('gladeReady', function listener() {
+                  window.removeEventListener('gladeReady', listener);
+                  gladeReady = true;
+                  for (var i = 0; i < elementsWaitingForGlade.length; i++) {
+                      elementsWaitingForGlade[i]._load();
+                  }
+              });
+            }
+            Polymer({
+                is: 'glade-ad',
+                properties: {
+                    adSlotId: String,
+                    dataAdUnitPath: String,
+                    width: String,
+                    height: String,
+                    dataClickUrl: String,
+                    dataPageUrl: String,
+                    dataJson: String,
+                },
+                ready: function() {
+                    if (gladeReady) {
+                        this._load();
+                    } else {
+                        elementsWaitingForGlade.push(this);
+                    }
+                },
+                _load: function() {
+                    Polymer.RenderStatus.afterNextRender(this, function() {
+                        var ad_slot = this.$.ad_slot_placeholder;
+                        ad_slot.id = this.adSlotId;
+                        ad_slot.setAttribute("data-ad-unit-path", this.dataAdUnitPath);
+                        ad_slot.setAttribute("width", this.width);
+                        ad_slot.setAttribute("height", this.height);
+                        if (this.dataClickUrl) {
+                            ad_slot.setAttribute("data-click-url", this.dataClickUrl);
+                        }
+                        if (this.dataPageUrl) {
+                            ad_slot.setAttribute("data-page-url", this.dataPageUrl);
+                        }
+                        if (this.dataJson) {
+                            ad_slot.setAttribute("data-json", this.dataJson);
+                        }
+                        glade.run(ad_slot);
+                    });
+                },
+            });
+        })();
+    </script>
+</dom-module>

@@ -1,0 +1,22 @@
+{
+  "name": "google-glade-ad",
+  "homepage": "https://github.com/googleads/glade-ad",
+  "description": "Web Component wrapper for Glade library code using Polymer.",
+  "main": "",
+  "authors": [
+    "Alberto Medina albertomedina@google.com",
+    "Demián Renzulli drenzulli@google.com",
+    "Cheney Tsai cheneytsai@google.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "polymer": "Polymer/polymer#1.9 - 2"
+  }
+}
