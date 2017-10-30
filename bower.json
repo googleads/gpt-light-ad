@@ -1,7 +1,7 @@
 {
-  "name": "google-glade-ad",
-  "homepage": "https://github.com/googleads/glade-ad",
-  "description": "Web Component wrapper for Glade library code using Polymer.",
+  "name": "gpt-lite-ad",
+  "homepage": "https://github.com/googleads/gpt-lite-ad",
+  "description": "Web Component wrapper for GPT Lite library code using Polymer.",
   "main": "",
   "authors": [
     "Alberto Medina albertomedina@google.com",
