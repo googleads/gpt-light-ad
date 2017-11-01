@@ -1,7 +1,7 @@
 {
-  "name": "gpt-lite-ad",
-  "homepage": "https://github.com/googleads/gpt-lite-ad",
-  "description": "Web Component wrapper for GPT Lite library code using Polymer.",
+  "name": "gpt-light-ad",
+  "homepage": "https://github.com/googleads/gpt-light-ad",
+  "description": "Web Component wrapper for GPT Light library code using Polymer.",
   "main": "",
   "authors": [
     "Alberto Medina albertomedina@google.com",

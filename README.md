@@ -1,26 +1,26 @@
-# GPT Lite Ad Polymer Element
-Web Component wrapper for GPT Lite library code using Polymer.
+# GPT Light Ad Polymer Element
+Web Component wrapper for GPT Light library code using Polymer.
 
 # Usage
 
-1. Load the GPT Lite library at the header of your root page:
+1. Load the GPT Light library at the header of your root page:
 
 ```html
 <script src='https://securepubads.g.doubleclick.net/static/glade.js' async></script>
 ```
 
-2. Import and use the gpt-lite-ad element inside any Web Component:
+2. Import and use the gpt-light-ad element inside any Web Component:
 
 ```html
-<link rel="import" href="gpt-lite-ad.html">
+<link rel="import" href="gpt-light-ad.html">
 ```
 ```html
-<gpt-lite-ad ad-slot-id="ad_slot_example" data-ad-unit-path="ad_unit_path" width='XXX' height='YYY'></gpt-lite-ad>
+<gpt-light-ad ad-slot-id="ad_slot_example" data-ad-unit-path="ad_unit_path" width='XXX' height='YYY'></gpt-light-ad>
 ```
 
 # Known Limitations
 
-In Single-page Apps (SPA), which reuse components between page visits (including gpt-lite-ad), the corresponding ad slots won't be refreshed.
+In Single-page Apps (SPA), which reuse components between page visits (including gpt-light-ad), the corresponding ad slots won't be refreshed.
 
 ## License
 
