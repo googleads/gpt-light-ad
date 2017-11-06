@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/googleads/gpt-light-ad)
+
 # GPT Light Ad Polymer Element
 Web Component wrapper for GPT Light library code using Polymer.
 
